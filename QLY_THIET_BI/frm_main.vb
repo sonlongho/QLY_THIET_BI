@@ -14,6 +14,7 @@
     End Sub
 
     Private Sub ButtonItem7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonItem7.Click
+        cnn.Close()
         End
     End Sub
 
@@ -54,5 +55,22 @@
         'Binding frm_grant_rights to DockTab has just been added
         binding_form_to_docktab(Bar1, frm_grant_rights, cur_dock_tab)
         Me.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub ButtonItem35_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonItem35.Click
+        If Application.OpenForms().OfType(Of frm_options).Any Then
+            Exit Sub
+        End If
+        Dim cur_dock_tab As Integer
+        Me.Cursor = Cursors.WaitCursor
+        'Add Tab
+        cur_dock_tab = add_tab(Bar1, "Thiết lập tùy chọn", "options")
+        'Binding frm_grant_rights to DockTab has just been added
+        binding_form_to_docktab(Bar1, frm_options, cur_dock_tab)
+        Me.Cursor = Cursors.Default
+    End Sub
+
+    Private Sub frm_main_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        cnn.Open()
     End Sub
 End Class

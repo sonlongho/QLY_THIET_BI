@@ -24,23 +24,33 @@ Partial Class frm_user
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.LabelX1 = New DevComponents.DotNetBar.LabelX
         Me.GroupPanel1 = New DevComponents.DotNetBar.Controls.GroupPanel
-        Me.ComboBoxEx1 = New DevComponents.DotNetBar.Controls.ComboBoxEx
-        Me.DateTimeInput1 = New DevComponents.Editors.DateTimeAdv.DateTimeInput
+        Me.txt_pass2 = New DevComponents.DotNetBar.Controls.TextBoxX
+        Me.cbb_state = New DevComponents.DotNetBar.Controls.ComboBoxEx
+        Me.ComboItem1 = New DevComponents.Editors.ComboItem
+        Me.ComboItem2 = New DevComponents.Editors.ComboItem
+        Me.ComboItem3 = New DevComponents.Editors.ComboItem
+        Me.dtp_date_create = New DevComponents.Editors.DateTimeAdv.DateTimeInput
         Me.btn_close = New DevComponents.DotNetBar.ButtonX
-        Me.TextBoxX4 = New DevComponents.DotNetBar.Controls.TextBoxX
+        Me.txt_email = New DevComponents.DotNetBar.Controls.TextBoxX
         Me.btn_add = New DevComponents.DotNetBar.ButtonX
-        Me.TextBoxX3 = New DevComponents.DotNetBar.Controls.TextBoxX
-        Me.TextBoxX2 = New DevComponents.DotNetBar.Controls.TextBoxX
-        Me.TextBoxX1 = New DevComponents.DotNetBar.Controls.TextBoxX
+        Me.txt_pass = New DevComponents.DotNetBar.Controls.TextBoxX
+        Me.txt_username = New DevComponents.DotNetBar.Controls.TextBoxX
+        Me.txt_name = New DevComponents.DotNetBar.Controls.TextBoxX
         Me.LabelX7 = New DevComponents.DotNetBar.LabelX
         Me.LabelX6 = New DevComponents.DotNetBar.LabelX
         Me.LabelX5 = New DevComponents.DotNetBar.LabelX
+        Me.LabelX8 = New DevComponents.DotNetBar.LabelX
         Me.LabelX4 = New DevComponents.DotNetBar.LabelX
         Me.LabelX3 = New DevComponents.DotNetBar.LabelX
         Me.LabelX2 = New DevComponents.DotNetBar.LabelX
         Me.dtgv_user = New DevComponents.DotNetBar.Controls.DataGridViewX
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.col2 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -48,7 +58,7 @@ Partial Class frm_user
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.GroupPanel1.SuspendLayout()
-        CType(Me.DateTimeInput1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtp_date_create, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgv_user, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,7 +77,7 @@ Partial Class frm_user
         Me.LabelX1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelX1.Name = "LabelX1"
         Me.LabelX1.Size = New System.Drawing.Size(188, 25)
-        Me.LabelX1.TabIndex = 0
+        Me.LabelX1.TabIndex = 12
         Me.LabelX1.Text = "THÊM NGƯỜI DÙNG"
         Me.LabelX1.TextAlignment = System.Drawing.StringAlignment.Center
         '
@@ -76,17 +86,19 @@ Partial Class frm_user
         Me.GroupPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GroupPanel1.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007
-        Me.GroupPanel1.Controls.Add(Me.ComboBoxEx1)
-        Me.GroupPanel1.Controls.Add(Me.DateTimeInput1)
+        Me.GroupPanel1.Controls.Add(Me.txt_pass2)
+        Me.GroupPanel1.Controls.Add(Me.cbb_state)
+        Me.GroupPanel1.Controls.Add(Me.dtp_date_create)
         Me.GroupPanel1.Controls.Add(Me.btn_close)
-        Me.GroupPanel1.Controls.Add(Me.TextBoxX4)
+        Me.GroupPanel1.Controls.Add(Me.txt_email)
         Me.GroupPanel1.Controls.Add(Me.btn_add)
-        Me.GroupPanel1.Controls.Add(Me.TextBoxX3)
-        Me.GroupPanel1.Controls.Add(Me.TextBoxX2)
-        Me.GroupPanel1.Controls.Add(Me.TextBoxX1)
+        Me.GroupPanel1.Controls.Add(Me.txt_pass)
+        Me.GroupPanel1.Controls.Add(Me.txt_username)
+        Me.GroupPanel1.Controls.Add(Me.txt_name)
         Me.GroupPanel1.Controls.Add(Me.LabelX7)
         Me.GroupPanel1.Controls.Add(Me.LabelX6)
         Me.GroupPanel1.Controls.Add(Me.LabelX5)
+        Me.GroupPanel1.Controls.Add(Me.LabelX8)
         Me.GroupPanel1.Controls.Add(Me.LabelX4)
         Me.GroupPanel1.Controls.Add(Me.LabelX3)
         Me.GroupPanel1.Controls.Add(Me.LabelX2)
@@ -129,70 +141,99 @@ Partial Class frm_user
         Me.GroupPanel1.TabIndex = 1
         Me.GroupPanel1.Text = "Thông tin người dùng"
         '
-        'ComboBoxEx1
-        '
-        Me.ComboBoxEx1.DisplayMember = "Text"
-        Me.ComboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.ComboBoxEx1.FormattingEnabled = True
-        Me.ComboBoxEx1.ItemHeight = 21
-        Me.ComboBoxEx1.Location = New System.Drawing.Point(735, 61)
-        Me.ComboBoxEx1.Name = "ComboBoxEx1"
-        Me.ComboBoxEx1.Size = New System.Drawing.Size(146, 27)
-        Me.ComboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.ComboBoxEx1.TabIndex = 6
-        '
-        'DateTimeInput1
+        'txt_pass2
         '
         '
         '
         '
-        Me.DateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground"
-        Me.DateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.DateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
-        Me.DateTimeInput1.ButtonDropDown.Visible = True
-        Me.DateTimeInput1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.DateTimeInput1.IsPopupCalendarOpen = False
-        Me.DateTimeInput1.Location = New System.Drawing.Point(131, 65)
+        Me.txt_pass2.Border.Class = "TextBoxBorder"
+        Me.txt_pass2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txt_pass2.Location = New System.Drawing.Point(142, 61)
+        Me.txt_pass2.Name = "txt_pass2"
+        Me.txt_pass2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_pass2.Size = New System.Drawing.Size(156, 27)
+        Me.txt_pass2.TabIndex = 4
+        '
+        'cbb_state
+        '
+        Me.cbb_state.DisplayMember = "Text"
+        Me.cbb_state.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbb_state.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbb_state.FormattingEnabled = True
+        Me.cbb_state.ItemHeight = 21
+        Me.cbb_state.Items.AddRange(New Object() {Me.ComboItem1, Me.ComboItem2, Me.ComboItem3})
+        Me.cbb_state.Location = New System.Drawing.Point(142, 104)
+        Me.cbb_state.Name = "cbb_state"
+        Me.cbb_state.Size = New System.Drawing.Size(156, 27)
+        Me.cbb_state.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.cbb_state.TabIndex = 7
+        '
+        'ComboItem1
+        '
+        Me.ComboItem1.Text = "Kích hoạt"
+        '
+        'ComboItem2
+        '
+        Me.ComboItem2.Text = "Vô hiệu"
+        '
+        'ComboItem3
+        '
+        Me.ComboItem3.Text = "Tạm dừng"
+        '
+        'dtp_date_create
         '
         '
         '
-        Me.DateTimeInput1.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
+        '
+        Me.dtp_date_create.BackgroundStyle.Class = "DateTimeInputBackground"
+        Me.dtp_date_create.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.dtp_date_create.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
+        Me.dtp_date_create.ButtonDropDown.Visible = True
+        Me.dtp_date_create.CustomFormat = "dd/mm/yyyy"
+        Me.dtp_date_create.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.dtp_date_create.IsPopupCalendarOpen = False
+        Me.dtp_date_create.Location = New System.Drawing.Point(444, 61)
         '
         '
         '
-        Me.DateTimeInput1.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window
-        Me.DateTimeInput1.MonthCalendar.BackgroundStyle.Class = ""
-        Me.DateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.DateTimeInput1.MonthCalendar.ClearButtonVisible = True
+        Me.dtp_date_create.MonthCalendar.AnnuallyMarkedDates = New Date(-1) {}
         '
         '
         '
-        Me.DateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2
-        Me.DateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90
-        Me.DateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground
-        Me.DateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
-        Me.DateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder
-        Me.DateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
-        Me.DateTimeInput1.MonthCalendar.CommandsBackgroundStyle.Class = ""
-        Me.DateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.DateTimeInput1.MonthCalendar.DisplayMonth = New Date(2018, 5, 1, 0, 0, 0, 0)
-        Me.DateTimeInput1.MonthCalendar.MarkedDates = New Date(-1) {}
-        Me.DateTimeInput1.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
+        Me.dtp_date_create.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window
+        Me.dtp_date_create.MonthCalendar.BackgroundStyle.Class = ""
+        Me.dtp_date_create.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.dtp_date_create.MonthCalendar.ClearButtonVisible = True
         '
         '
         '
-        Me.DateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
-        Me.DateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90
-        Me.DateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
-        Me.DateTimeInput1.MonthCalendar.NavigationBackgroundStyle.Class = ""
-        Me.DateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.DateTimeInput1.MonthCalendar.TodayButtonVisible = True
-        Me.DateTimeInput1.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
-        Me.DateTimeInput1.Name = "DateTimeInput1"
-        Me.DateTimeInput1.Size = New System.Drawing.Size(156, 27)
-        Me.DateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.DateTimeInput1.TabIndex = 5
-        Me.DateTimeInput1.Value = New Date(2018, 5, 23, 22, 25, 0, 0)
+        Me.dtp_date_create.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2
+        Me.dtp_date_create.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90
+        Me.dtp_date_create.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground
+        Me.dtp_date_create.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid
+        Me.dtp_date_create.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder
+        Me.dtp_date_create.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1
+        Me.dtp_date_create.MonthCalendar.CommandsBackgroundStyle.Class = ""
+        Me.dtp_date_create.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.dtp_date_create.MonthCalendar.DisplayMonth = New Date(2018, 5, 1, 0, 0, 0, 0)
+        Me.dtp_date_create.MonthCalendar.MarkedDates = New Date(-1) {}
+        Me.dtp_date_create.MonthCalendar.MonthlyMarkedDates = New Date(-1) {}
+        '
+        '
+        '
+        Me.dtp_date_create.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.dtp_date_create.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90
+        Me.dtp_date_create.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground
+        Me.dtp_date_create.MonthCalendar.NavigationBackgroundStyle.Class = ""
+        Me.dtp_date_create.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.dtp_date_create.MonthCalendar.ShowWeekNumbers = True
+        Me.dtp_date_create.MonthCalendar.TodayButtonVisible = True
+        Me.dtp_date_create.MonthCalendar.WeeklyMarkedDays = New System.DayOfWeek(-1) {}
+        Me.dtp_date_create.Name = "dtp_date_create"
+        Me.dtp_date_create.Size = New System.Drawing.Size(155, 27)
+        Me.dtp_date_create.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
+        Me.dtp_date_create.TabIndex = 5
+        Me.dtp_date_create.Value = New Date(2018, 6, 15, 0, 0, 0, 0)
         '
         'btn_close
         '
@@ -205,20 +246,20 @@ Partial Class frm_user
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(92, 28)
         Me.btn_close.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btn_close.TabIndex = 0
+        Me.btn_close.TabIndex = 9
         Me.btn_close.Text = "Thoát"
         '
-        'TextBoxX4
+        'txt_email
         '
         '
         '
         '
-        Me.TextBoxX4.Border.Class = "TextBoxBorder"
-        Me.TextBoxX4.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TextBoxX4.Location = New System.Drawing.Point(444, 61)
-        Me.TextBoxX4.Name = "TextBoxX4"
-        Me.TextBoxX4.Size = New System.Drawing.Size(155, 27)
-        Me.TextBoxX4.TabIndex = 4
+        Me.txt_email.Border.Class = "TextBoxBorder"
+        Me.txt_email.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txt_email.Location = New System.Drawing.Point(690, 61)
+        Me.txt_email.Name = "txt_email"
+        Me.txt_email.Size = New System.Drawing.Size(191, 27)
+        Me.txt_email.TabIndex = 6
         '
         'btn_add
         '
@@ -230,45 +271,45 @@ Partial Class frm_user
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(92, 28)
         Me.btn_add.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
-        Me.btn_add.TabIndex = 3
+        Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "Thêm"
         '
-        'TextBoxX3
+        'txt_pass
         '
         '
         '
         '
-        Me.TextBoxX3.Border.Class = "TextBoxBorder"
-        Me.TextBoxX3.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TextBoxX3.Location = New System.Drawing.Point(735, 14)
-        Me.TextBoxX3.Name = "TextBoxX3"
-        Me.TextBoxX3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBoxX3.Size = New System.Drawing.Size(146, 27)
-        Me.TextBoxX3.TabIndex = 3
+        Me.txt_pass.Border.Class = "TextBoxBorder"
+        Me.txt_pass.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txt_pass.Location = New System.Drawing.Point(735, 14)
+        Me.txt_pass.Name = "txt_pass"
+        Me.txt_pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_pass.Size = New System.Drawing.Size(146, 27)
+        Me.txt_pass.TabIndex = 3
         '
-        'TextBoxX2
-        '
-        '
-        '
-        '
-        Me.TextBoxX2.Border.Class = "TextBoxBorder"
-        Me.TextBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TextBoxX2.Location = New System.Drawing.Point(444, 15)
-        Me.TextBoxX2.Name = "TextBoxX2"
-        Me.TextBoxX2.Size = New System.Drawing.Size(155, 27)
-        Me.TextBoxX2.TabIndex = 2
-        '
-        'TextBoxX1
+        'txt_username
         '
         '
         '
         '
-        Me.TextBoxX1.Border.Class = "TextBoxBorder"
-        Me.TextBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.TextBoxX1.Location = New System.Drawing.Point(131, 15)
-        Me.TextBoxX1.Name = "TextBoxX1"
-        Me.TextBoxX1.Size = New System.Drawing.Size(156, 27)
-        Me.TextBoxX1.TabIndex = 1
+        Me.txt_username.Border.Class = "TextBoxBorder"
+        Me.txt_username.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txt_username.Location = New System.Drawing.Point(444, 15)
+        Me.txt_username.Name = "txt_username"
+        Me.txt_username.Size = New System.Drawing.Size(155, 27)
+        Me.txt_username.TabIndex = 2
+        '
+        'txt_name
+        '
+        '
+        '
+        '
+        Me.txt_name.Border.Class = "TextBoxBorder"
+        Me.txt_name.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.txt_name.Location = New System.Drawing.Point(142, 15)
+        Me.txt_name.Name = "txt_name"
+        Me.txt_name.Size = New System.Drawing.Size(156, 27)
+        Me.txt_name.TabIndex = 1
         '
         'LabelX7
         '
@@ -279,11 +320,11 @@ Partial Class frm_user
         Me.LabelX7.BackgroundStyle.Class = ""
         Me.LabelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.LabelX7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelX7.Location = New System.Drawing.Point(315, 65)
+        Me.LabelX7.Location = New System.Drawing.Point(631, 65)
         Me.LabelX7.Name = "LabelX7"
-        Me.LabelX7.Size = New System.Drawing.Size(108, 23)
+        Me.LabelX7.Size = New System.Drawing.Size(53, 23)
         Me.LabelX7.TabIndex = 0
-        Me.LabelX7.Text = "Địa chỉ email:"
+        Me.LabelX7.Text = "Email:"
         '
         'LabelX6
         '
@@ -294,7 +335,7 @@ Partial Class frm_user
         Me.LabelX6.BackgroundStyle.Class = ""
         Me.LabelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.LabelX6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelX6.Location = New System.Drawing.Point(38, 65)
+        Me.LabelX6.Location = New System.Drawing.Point(315, 65)
         Me.LabelX6.Name = "LabelX6"
         Me.LabelX6.Size = New System.Drawing.Size(82, 23)
         Me.LabelX6.TabIndex = 0
@@ -309,11 +350,26 @@ Partial Class frm_user
         Me.LabelX5.BackgroundStyle.Class = ""
         Me.LabelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.LabelX5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelX5.Location = New System.Drawing.Point(631, 64)
+        Me.LabelX5.Location = New System.Drawing.Point(31, 108)
         Me.LabelX5.Name = "LabelX5"
         Me.LabelX5.Size = New System.Drawing.Size(86, 23)
         Me.LabelX5.TabIndex = 0
         Me.LabelX5.Text = "Trạng thái:"
+        '
+        'LabelX8
+        '
+        Me.LabelX8.BackColor = System.Drawing.Color.Transparent
+        '
+        '
+        '
+        Me.LabelX8.BackgroundStyle.Class = ""
+        Me.LabelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LabelX8.Location = New System.Drawing.Point(631, 18)
+        Me.LabelX8.Name = "LabelX8"
+        Me.LabelX8.Size = New System.Drawing.Size(86, 23)
+        Me.LabelX8.TabIndex = 0
+        Me.LabelX8.Text = "Mật khẩu:"
         '
         'LabelX4
         '
@@ -324,11 +380,11 @@ Partial Class frm_user
         Me.LabelX4.BackgroundStyle.Class = ""
         Me.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.LabelX4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelX4.Location = New System.Drawing.Point(631, 15)
+        Me.LabelX4.Location = New System.Drawing.Point(31, 65)
         Me.LabelX4.Name = "LabelX4"
-        Me.LabelX4.Size = New System.Drawing.Size(86, 23)
+        Me.LabelX4.Size = New System.Drawing.Size(105, 23)
         Me.LabelX4.TabIndex = 0
-        Me.LabelX4.Text = "Mật khẩu:"
+        Me.LabelX4.Text = "Xác nhận MK:"
         '
         'LabelX3
         '
@@ -354,7 +410,7 @@ Partial Class frm_user
         Me.LabelX2.BackgroundStyle.Class = ""
         Me.LabelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.LabelX2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LabelX2.Location = New System.Drawing.Point(38, 15)
+        Me.LabelX2.Location = New System.Drawing.Point(31, 14)
         Me.LabelX2.Name = "LabelX2"
         Me.LabelX2.Size = New System.Drawing.Size(75, 23)
         Me.LabelX2.TabIndex = 0
@@ -362,22 +418,50 @@ Partial Class frm_user
         '
         'dtgv_user
         '
+        Me.dtgv_user.AllowUserToAddRows = False
+        Me.dtgv_user.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dtgv_user.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dtgv_user.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.dtgv_user.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.dtgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgv_user.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.col2, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dtgv_user.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dtgv_user.GridColor = System.Drawing.Color.FromArgb(CType(CType(170, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.dtgv_user.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column6, Me.Column1, Me.col2, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgv_user.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dtgv_user.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.dtgv_user.Location = New System.Drawing.Point(12, 250)
         Me.dtgv_user.Name = "dtgv_user"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Yellow
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.dtgv_user.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dtgv_user.RowHeadersVisible = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.dtgv_user.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dtgv_user.Size = New System.Drawing.Size(916, 265)
-        Me.dtgv_user.TabIndex = 2
+        Me.dtgv_user.TabIndex = 10
+        '
+        'Column6
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column6.HeaderText = "STT"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 50
         '
         'Column1
         '
@@ -413,7 +497,7 @@ Partial Class frm_user
         '
         Me.Column5.HeaderText = "Trạng thái"
         Me.Column5.Name = "Column5"
-        Me.Column5.Width = 120
+        Me.Column5.Width = 110
         '
         'frm_user
         '
@@ -433,7 +517,7 @@ Partial Class frm_user
         Me.Name = "frm_user"
         Me.Text = "frm_nguoidung"
         Me.GroupPanel1.ResumeLayout(False)
-        CType(Me.DateTimeInput1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtp_date_create, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgv_user, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -450,12 +534,18 @@ Partial Class frm_user
     Friend WithEvents LabelX7 As DevComponents.DotNetBar.LabelX
     Friend WithEvents btn_add As DevComponents.DotNetBar.ButtonX
     Friend WithEvents btn_close As DevComponents.DotNetBar.ButtonX
-    Friend WithEvents TextBoxX3 As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents TextBoxX2 As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents TextBoxX1 As DevComponents.DotNetBar.Controls.TextBoxX
-    Friend WithEvents ComboBoxEx1 As DevComponents.DotNetBar.Controls.ComboBoxEx
-    Friend WithEvents DateTimeInput1 As DevComponents.Editors.DateTimeAdv.DateTimeInput
-    Friend WithEvents TextBoxX4 As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txt_pass As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txt_username As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents txt_name As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents cbb_state As DevComponents.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents dtp_date_create As DevComponents.Editors.DateTimeAdv.DateTimeInput
+    Friend WithEvents txt_email As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents ComboItem1 As DevComponents.Editors.ComboItem
+    Friend WithEvents ComboItem2 As DevComponents.Editors.ComboItem
+    Friend WithEvents ComboItem3 As DevComponents.Editors.ComboItem
+    Friend WithEvents txt_pass2 As DevComponents.DotNetBar.Controls.TextBoxX
+    Friend WithEvents LabelX8 As DevComponents.DotNetBar.LabelX
+    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn

@@ -1,4 +1,10 @@
 ﻿Module general
+    Dim cnnString As String = "Initial Catalog=QLTB;Data Source=localhost;Integrated Security=SSPI;User Id=sa;Password=;" 'Good for localhost
+    'Dim cnnString As String = "Initial Catalog=QLTB;Data Source=192.168.100.2,1433;Network Library=DBMSSOCN;Integrated Security = True;User Id=sa;Password=;" 'Good for LAN
+    Public cnn As New SqlClient.SqlConnection(cnnString)
+    Public cmd As New SqlClient.SqlCommand
+    Public rs As SqlClient.SqlDataReader
+
     Public Function add_tab(ByRef bar As DevComponents.DotNetBar.Bar, ByVal title As String, ByVal name As String) As Integer
         Dim dci As New DevComponents.DotNetBar.DockContainerItem
         Dim pdc As New DevComponents.DotNetBar.PanelDockContainer
