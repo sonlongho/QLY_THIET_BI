@@ -40,7 +40,7 @@
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=9.3.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Dotnetbar 9.3.0\DotNetBar for Winform 9.3.0.0 Cracked DLL\DevComponents.DotNetBar2.dll</HintPath>
+      <HintPath>F:\Dotnetbar 9.3.0\DotNetBar for Winform 9.3.0.0 Cracked DLL\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -178,6 +178,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="rights_cmd.vb" />
+    <Compile Include="type_of_equipment.vb" />
     <Compile Include="user.vb" />
   </ItemGroup>
   <ItemGroup>

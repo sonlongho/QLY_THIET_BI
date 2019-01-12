@@ -4,6 +4,8 @@
     Public cnn As New SqlClient.SqlConnection(cnnString)
     Public cmd As New SqlClient.SqlCommand
     Public rs As SqlClient.SqlDataReader
+    Public tt As New ToolTip
+    Public userCode As String = ""
 
     Public Function add_tab(ByRef bar As DevComponents.DotNetBar.Bar, ByVal title As String, ByVal name As String) As Integer
         Dim dci As New DevComponents.DotNetBar.DockContainerItem
